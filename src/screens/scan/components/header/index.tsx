@@ -1,8 +1,7 @@
+import {BtnIcon, Icon} from '@components';
+import {Colors} from '@constants';
 import {Text, View} from 'react-native';
-import {Icon} from '../../../../components';
 import styles from './styles';
-import {Colors} from '../../../../constants';
-import {BtnIcon} from '../../../../components';
 
 export default function Header() {
   return (

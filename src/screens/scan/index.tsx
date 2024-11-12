@@ -1,8 +1,8 @@
 import {View} from 'react-native';
-import styles from './styles';
 import Header from './components/header';
-import QRView from './components/qr_view';
 import QRAction from './components/qr_action';
+import QRView from './components/qr_view';
+import styles from './styles';
 
 export default function ScanScreen() {
   return (

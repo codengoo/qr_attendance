@@ -1,8 +1,7 @@
+import {BtnIcon, Icon} from '@components';
+import {Colors} from '@constants';
 import {View} from 'react-native';
-import {BtnIcon} from '../../../../components';
-import {Icon} from '../../../../components';
 import styles from './styles';
-import {Colors} from '../../../../constants';
 
 export default function QRAction() {
   return (
