@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primary30,
     width: 240,
     height: 240,
+    overflow: "hidden"
   },
 });
 
