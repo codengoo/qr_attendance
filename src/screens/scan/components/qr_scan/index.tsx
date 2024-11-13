@@ -9,8 +9,7 @@ import styles from './styles';
 
 export default function QRScan() {
   const device = useCameraDevice('back');
-  const {hasPermission, requestPermission} 
-  = useCameraPermission();
+  const {hasPermission, requestPermission} = useCameraPermission();
 
   if (!hasPermission) {
     requestPermission();
@@ -25,7 +24,6 @@ export default function QRScan() {
   const codeScanner = useCodeScanner({
     codeTypes: ['qr', 'ean-13'],
     onCodeScanned: codes => {
-      console.log(`Scanned ${codes.length} codes!`);
       console.log(codes);
     },
   });
