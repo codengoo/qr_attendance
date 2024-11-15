@@ -1,7 +1,30 @@
-import {Image, StatusBar, View} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStaticNavigation} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {StatusBar, View} from 'react-native';
 import ScanScreen from './src/screens/scan';
 
 export default function App() {
+  const HomeTabs = createBottomTabNavigator({
+    screenOptions: {
+      headerShown: false,
+    },
+    screens: {
+      Feed: ScanScreen,
+    },
+  });
+
+  const RootStack = createNativeStackNavigator({
+    screenOptions: {
+      headerShown: false,
+    },
+    screens: {
+      Home: HomeTabs,
+    },
+  });
+
+  const Navigation = createStaticNavigation(RootStack);
+
   return (
     <View style={{position: 'absolute', width: '100%', height: '100%'}}>
       <StatusBar
@@ -9,7 +32,7 @@ export default function App() {
         backgroundColor="transparent"
         barStyle={'dark-content'}
       />
-      <Image
+      {/* <Image
         source={require('./src/assets/images/bg.png')}
         resizeMode="cover"
         style={{
@@ -19,9 +42,9 @@ export default function App() {
           top: 0,
           left: 0,
         }}
-      />
+      /> */}
 
-      <ScanScreen />
+      <Navigation />
     </View>
   );
 }
